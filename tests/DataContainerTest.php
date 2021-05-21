@@ -55,6 +55,9 @@ final class DataContainerTest extends TestCase
 
     /** 
      * @depends testCreation
+     * 
+     * This test cannot be executed due a bug:
+     * https://bugs.php.net/bug.php?id=81064
      */
     /*public function testPhpShouldEnforceValueTypeIntegrity(DataContainer $dc): void
     {
