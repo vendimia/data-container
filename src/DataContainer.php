@@ -113,47 +113,47 @@ abstract class DataContainer implements ArrayAccess, Iterator
         return $this->asArray();
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return in_array($this->properties, $offset);
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->$offset;
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->$offset = $value;
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw new LogicException("DataContainer object can't unset a property.");
     }
 
-    public function current()
+    public function current(): mixed
     {
         return $this->{current($this->properties)};
     }
 
-    public function key()
+    public function key(): mixed
     {
         return current($this->properties);
     }
 
-    public function next()
+    public function next(): void
     {
         next($this->properties);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         reset($this->properties);
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return current($this->properties) !== false;
     }
