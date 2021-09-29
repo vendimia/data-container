@@ -2,7 +2,7 @@
     "name": "vendimia/data-container",
     "description": "Simple local DTO implementation",
     "license": "GPL-3.0-or-later",
-    "keywords": ["php", "dto"],
+    "keywords": ["php", "dto", "value-object"],
     "authors": [
         {
             "name": "Oliver Etchebarne",
@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=8.0"
+        "php": ">=8.0",
+        "vendimia/interfaces": "*"
     },
     "autoload": {
         "psr-4": {
